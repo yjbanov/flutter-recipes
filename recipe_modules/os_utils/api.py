@@ -181,6 +181,24 @@ class FlutterDepsApi(recipe_api.RecipeApi):
             'Erase simulators', ['sudo', 'xcrun', 'simctl', 'erase', 'all']
         )
 
+  def enable_long_paths(self):
+    """Enables long path support in Windows.
+
+    Args:
+      env(dict): Current environment variables.
+      env_prefixes(dict): Current environment prefixes variables.
+    """
+
+    if not self.m.platform.is_win:
+      # noop for non windows platforms.
+      return
+    with self.m.step.nest('Enable long path support'):
+      resource_name = self.resource('long_paths.ps1')
+      self.m.step(
+          'Run long path support script',
+          ['powershell.exe', resource_name],
+      )
+
   def dismiss_dialogs(self):
     """Dismisses iOS dialogs to avoid problems.
 

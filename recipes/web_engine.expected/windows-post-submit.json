@@ -115,23 +115,18 @@
     "name": "Install Certs"
   },
   {
+    "cmd": [],
+    "name": "Enable long path support"
+  },
+  {
     "cmd": [
       "powershell.exe",
-      "New-ItemProperty -Path \"HKLM:\\SYSTEM\\CurrentControlSet\\Control\\FileSystem\" -Name \"LongPathsEnabled\" -Value 1 -PropertyType DWORD -Force"
+      "RECIPE_MODULE[flutter::os_utils]\\resources\\long_paths.ps1"
     ],
-    "env": {
-      "ANDROID_HOME": "[CACHE]\\builder\\src\\third_party\\android_tools\\sdk",
-      "CHROME_NO_SANDBOX": "true",
-      "ENGINE_PATH": "[CACHE]\\builder",
-      "GOMA_DIR": "[CACHE]\\goma\\client"
-    },
-    "env_prefixes": {
-      "PATH": [
-        "[CACHE]\\certs",
-        "[CACHE]\\builder\\src\\third_party\\dart\\tools\\sdks\\dart-sdk\\bin"
-      ]
-    },
-    "name": "Enable long path support"
+    "name": "Enable long path support.Run long path support script",
+    "~followup_annotations": [
+      "@@@STEP_NEST_LEVEL@1@@@"
+    ]
   },
   {
     "cmd": [],

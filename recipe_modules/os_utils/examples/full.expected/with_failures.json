@@ -69,6 +69,20 @@
     "name": "temp dir for Create temp directory"
   },
   {
+    "cmd": [],
+    "name": "Enable long path support"
+  },
+  {
+    "cmd": [
+      "powershell.exe",
+      "RECIPE_MODULE[flutter::os_utils]\\resources\\long_paths.ps1"
+    ],
+    "name": "Enable long path support.Run long path support script",
+    "~followup_annotations": [
+      "@@@STEP_NEST_LEVEL@1@@@"
+    ]
+  },
+  {
     "cmd": [
       "powershell.exe",
       "gci -Recurse cert: |Where-Object {$_.Subject -like \"*GTS CA 1D4*\" -or $_.FriendlyName -like \"GlobalSign Root CA - R1\" -or $_.Subject -like \"*GTS Root R1*\"}"

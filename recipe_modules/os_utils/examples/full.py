@@ -21,6 +21,7 @@ def RunSteps(api):
     file = temp_dir.join('artifacts.zip')
   api.os_utils.clean_derived_data()
   api.os_utils.shutdown_simulators()
+  api.os_utils.enable_long_paths()
   api.os_utils.dismiss_dialogs()
   api.os_utils.print_pub_certs()
 

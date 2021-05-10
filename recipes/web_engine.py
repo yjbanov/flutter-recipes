@@ -140,7 +140,7 @@ def RunSteps(api, properties, env_properties):
   api.flutter_deps.certs(env, env_prefixes)
 
   # Enable long path support on Windows.
-  api.flutter_deps.enable_long_paths(env, env_prefixes)
+  api.os_utils.enable_long_paths()
 
   # Checkout source code and build
   api.repo_util.engine_checkout(cache_root, env, env_prefixes)
