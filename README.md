@@ -4,7 +4,7 @@ This repository contains Flutter's LUCI recipes. For the LUCI infrastructure
 config, see [flutter/infra on GitHub](https://github.com/flutter/infra). Actual
 builds can be seen at [ci.chromium.org](https://ci.chromium.org/p/flutter).
 
-## Config
+## Configuration
 
 [Tricium](https://chromium.googlesource.com/infra/infra/+/master/go/src/infra/tricium/README.md) configurations recipes repo.
 
